@@ -1,0 +1,131 @@
+Vue.js 
+- build UI and SPAs 
+- progressive JS framework
+	- small part of a page 
+	- scale it up to a complex app 
+
+- builds on standard HTML/CSS/JS 
+- declarative - component-based programming model 
+
+- extends the standard HTML with template syntax 
+- Reactivity 
+	- Vue tracks JS object state changes and efficiently updates the DOM 
+- Virtual DOM 
+- Enhance the static HTML without build step 
+- SPA 
+- SSR 
+- Directives - special attributes 
+- Compouted properties which are are recalculated when data changes 
+- Two-way binding 
+- Template syntax 
+- Lightweight and flexible 
+- Lifecyle hooks 
+- Ecosystem tools [ Vue Router, Pinia/Vuex(state management), Vite/Vue CLI 
+
+-> OPtions API and Composition API 
+--> Options API - organized component code by option types ( data, methods, computed, .... ) 
+	- Easy for beginners, readable for small components, clear separation of concerns 
+	- Logic could be scattered across different options, 
+	- Harder to reuse logic between components 
+
+--> Composition API - default with Vue3 -> organizes code by the features - setup, ref, ...... 
+	- Logic for a feature is grouped at one place, easier to reuse the logic
+	- Large and complex components 
+	- longer learning curve. 
+
+--> SFC - Single File Component ( logic, template, css ) defined within a single .vue file. 
+	
+
+	npm create vue@latest
+	-> Project Name 
+	-> Typescript - No	
+	-> JSX	- Yes 
+	-> Routing - No
+	-> Pinia - No. 
+	-> ... No 
+	
+	-> Experimental -> Rolldown-vite - Yes 
+	-> Exclude Samples -> Yes 
+
+	cd project-name 
+	npm install 
+	npm run format 
+	npm run dev 	-> pnpm dev 
+
+
+
+Template Directives 
+- starts with v-* attribute directives 
+- Attribute binding directives 
+	v-bind:id="refValue", v-bind:class, v-bind:value,
+	:id="dynamicId",  
+- cant use the {{ }} - bind to the attribute values using v-bind directive 
+
+
+Event Binding -> v-on:event-name or @event-name 
+Event Modifiers -> .stop, .prevent, .once,  
+	-> @click.stop="fn($event)" --> e.stopPropagation(); 
+	-> @click.prevent="fn($event)" --> e.preventDefault(); 
+	-> @click.stop.prevent="fn";
+
+Key Events 
+	@keyup .enter, .esc, .up, .down, .left, .right
+	.alt, .ctrl, .shift, .meta [ Windows Key] 
+	@keyup.alt.enter 
+	@click.ctrl =
+Mouse Events 
+	.left, .right 
+
+Lifecycle hooks 
+1. Mounting Stage 
+-> a. setup() - Composition API
+      beforeCreate, - Options API 
+-> b. Init OPtions API 
+	- created -> Options API 
+	- xxxxx -> Compositions API 
+-> Whether the pre-compiled template available? 
+	- If not, the template is compiled on the fly 
+-> beforeMount() - Options API 
+   OnBeforeMount() -> CAPI
+-> Initial render, create and insert the DOM nodes 
+-> mounted() -> Options API 
+   onMounted() -> CAPI
+
+2. Updating stage 
+-> when the data changes 
+-> beforeUpdate -> OAPI
+   OnBeforeUpdate() -> CAPI 
+-> re-render and patches the DOM changes 
+-> updated() - OAPI
+   OnUpdated() - CAPI
+
+3. Unmounting stage 
+-> beforeUnmount() - OPAI 
+   onBeforeUnmount() - CAPI 
+--> removed from the DOM 
+-> unmounted() - OAPI 
+   onUnmounted() - CAPI
+   	
+
+CAPI 
+setup -> OnBeforeMount -> OnMounted -> OnBeforeUpdate -> OnUpdated -> OnBeforeUnmount -> OnUnmounted
+OAPI
+beforeCreate->created-> beforeMount-> mounted -> beforeUpdate -> updated -> beforeUnmount-> unmounted
+
+
+errorCaptured|OnErrorCaptured 
+-> can be captured from component, event handlers, hooks, setups..... 
+
+renderTracked, renderTriggered | OnRenderTracked, onRenderTriggered 
+	-> dev mode only hooks - not called in SSR 
+activate, deactivated
+
+
+
+
+
+
+
+
+
+	

@@ -1,0 +1,35 @@
+<html>
+    <div id="app">
+        <!-- <HelloWorld></HelloWorld> -->
+        <hello-world></hello-world>
+        <h2>Welome to Vue.js</h2>
+        <p>
+            {{ message }}
+        </p>
+    </div>
+    <hr/>
+    <div id="app2">
+        <h3> {{ message }}</h3>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+        const HelloWorld = {
+            template: `<div><h1>Hello World !!! </h1></div>`
+        }
+        let app = Vue.createApp({
+            components: {HelloWorld},
+            data() { 
+                return { 
+                    message: "Vue Component using Options API"
+                }
+            }
+        }).mount("#app");
+        let app2 = Vue.createApp({
+            data() { 
+                return { 
+                    message: "Another component"
+                }
+            }
+        }).mount("#app2");
+    </script>
+</html>

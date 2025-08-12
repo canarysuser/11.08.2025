@@ -33,8 +33,17 @@ const router = createRouter({
 
 export default router;
 
+File: main.js 
+
+createApp(App).use(router).mount("#app");
 
 
+
+Pinia 
+- state - reactive data held by the App - returns an object
+- actions - methods which mutates/updates the state, running logic, can be async/sync 
+- getters - computed properties which retrieve updated values whenever the state 		changes, takes the state object as input and returns a computed value
+	    -> derives the values and cache it until the dependencies change 
 
 
 

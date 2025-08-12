@@ -623,6 +623,38 @@
       "unitPrice": "500",
       "unitsInStock": "500",
       "discontinued": false
+    },
+    {
+      "id": "85d6",
+      "productId": 0,
+      "productName": "",
+      "unitPrice": "-1",
+      "unitsInStock": 0,
+      "discontinued": false
+    },
+    {
+      "id": "177d",
+      "productId": 0,
+      "productName": "",
+      "unitPrice": 0,
+      "unitsInStock": 0,
+      "discontinued": false
+    },
+    {
+      "id": "58d1",
+      "productId": 0,
+      "productName": "",
+      "unitPrice": 0,
+      "unitsInStock": 0,
+      "discontinued": false
+    },
+    {
+      "id": "df37",
+      "productId": 0,
+      "productName": "sssss",
+      "unitPrice": 0,
+      "unitsInStock": 0,
+      "discontinued": false
     }
   ]
 }

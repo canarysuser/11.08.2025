@@ -1,5 +1,5 @@
 <script setup>
-import { onBeforeUpdate, onMounted, ref } from 'vue';
+import { computed, onBeforeUpdate, onMounted, ref } from 'vue';
 import { ProductAPIService } from '../products/ProductAPIService';
 import { RouterLink } from 'vue-router';
 
@@ -11,7 +11,12 @@ onMounted(async () => {
     list.value = result;//await service.getAllProducts();
    
 })
-
+var search = ref("");
+var computedList = computed(()=>{
+    return search.value.length>0?
+         list.value.filter(c=>c.productName.toLowerCase().includes(search.value.toLowerCase()))
+         : list.value
+})
 </script>
 
 <template>
@@ -25,6 +30,10 @@ onMounted(async () => {
             <RouterLink class="btn btn-warning" :to="{name:'routednew'}">Create</RouterLink>
         </div>
         <div class="card-body mb-5">
+            <div class="input-group border-1 m-auto bg-secondary p-2 mb-2">
+                <div class="input-group-text">Search</div>
+                <input type="search" class="form-control" v-model="search"/>
+            </div>
             <table class="table table-dark table-striped table-hover">
                 <thead>
                     <tr>
@@ -34,7 +43,7 @@ onMounted(async () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="(item, key) in list" :key="key">
+                    <tr v-for="(item, key) in computedList" :key="key">
                         <td>{{ item.productName }}</td>
                         <td>{{ item.unitPrice }}</td>
                         <td> 

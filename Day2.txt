@@ -1,0 +1,46 @@
+Routing 
+--> Vue Router 
+	RouterLink, RouterView 
+	composables - useRouter, useRoute 
+	
+-> routes { path: '/....', component: CompA } 
+	  { path: '/:id', component: CompB } 
+	  { path: '/:pathMatch(.*)*', name: 'Notfound', component: CompC} 
+	  	to={ name:'Notfound' }
+	  { path: '/product-:afterProduct(.*)' 
+
+-- programmitcally change route 
+	router.push({....}); 
+	router.replace({...}); 
+	
+
+
+Install the Vue Router package 
+npm i vue-router@4 
+
+
+File: src\router\index.js 
+import { createRouter, createWebHistory } from "vue-router";
+
+const routes = [
+
+];
+
+const router = createRouter({
+    history: createWebHistory(import.meta.env.BASE_URL), 
+    routes: routes
+})
+
+export default router;
+
+
+
+
+
+
+
+
+
+
+
+

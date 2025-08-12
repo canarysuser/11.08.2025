@@ -6,11 +6,13 @@ import RoutedDetails from "@/features/routed/RoutedDetails.vue";
 import RoutedEdit from "@/features/routed/RoutedEdit.vue";
 import RoutedList from "@/features/routed/RoutedList.vue";
 import RoutedNew from "@/features/routed/RoutedNew.vue";
+import StateMain from "@/features/state/StateMain.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
     { path:'/home', name:'homepage', component: HomeComponent}, 
     { path:'/products', name:'producthome', component: ProductHome},
+    { path:'/state', name:'customstate', component: StateMain},
     {   
         path: '/routed', 
         children: [

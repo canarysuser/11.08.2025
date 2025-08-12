@@ -20,6 +20,9 @@
          <li class="nav-item">
           <router-link class="nav-link" :to="{name:'routedlist'}">Routed Products</router-link>
         </li>
+         <li class="nav-item">
+          <router-link class="nav-link" :to="{name:'customstate'}">Custom State</router-link>
+        </li>
       </ul>
     </div>
   </div>

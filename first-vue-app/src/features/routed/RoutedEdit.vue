@@ -23,7 +23,7 @@ function handleChange(e) {
     model.value[e.target.name] = e.target.value;
 }
 async function submit(e) { 
-     var service = new ProductAPIService(); 
+    var service = new ProductAPIService(); 
     await service.update(model.value);
     router.push({name:'routedlist'});
 }

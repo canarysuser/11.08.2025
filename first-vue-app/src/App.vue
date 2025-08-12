@@ -1,23 +1,26 @@
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, reactive, ref } from 'vue';
 import FooterComponent from './components/FooterComponent.vue';
 import HeaderComponent from './components/HeaderComponent.vue';
-import HomeComponent from './components/HomeComponent.vue';
-import LIfecycleHook from './components/LIfecycleHook.vue';
-import ProductSampleComponent from './components/ProductSampleComponent.vue';
-import ProductHome from './features/products/ProductHome.vue';
+import { store } from './features/state/custom-store-config2';
+import { provide } from 'vue';
 
 onMounted(async ()=>{
-    var response = await fetch("/products.json"); 
-    var data = await response.json(); 
-    console.log(data.products);
+    // var response = await fetch("/products.json"); 
+    // var data = await response.json(); 
+    // console.log(data.products);
 })
+var user = ref({username:'admin', designation:'PM'});
 
-
+provide('counter', store);
+provide('user', user);
+// window.localStorage.setItem('user', JSON.stringify(user.value));
+// window.sessionStorage.setItem('counter', JSON.stringify(store))
 </script>
 
 <template>
   <HeaderComponent/>
+  <p class="display-1 text-danger">{{ store.count }} - Hits {{ store.noOfHits }}</p>
   <!-- <HomeComponent/> -->
    <!-- <ProductSampleComponent/> -->
     <!-- <LIfecycleHook/>

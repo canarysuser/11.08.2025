@@ -20,7 +20,7 @@ provide('user', user);
 
 <template>
   <HeaderComponent/>
-  <p class="display-1 text-danger">{{ store.count }} - Hits {{ store.noOfHits }}</p>
+  <!-- <p class="display-1 text-danger">{{ store.count }} - Hits {{ store.noOfHits }}</p> -->
   <!-- <HomeComponent/> -->
    <!-- <ProductSampleComponent/> -->
     <!-- <LIfecycleHook/>

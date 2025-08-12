@@ -2,20 +2,23 @@
 import { ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
 import { ProductAPIService } from '../products/ProductAPIService';
+import { useProductStore } from '../state/product-store-config';
 var model= ref({});
 const route = useRoute(); 
+const store=useProductStore(); 
 
 const id = route.params.id; 
 
 watch(()=>route.params.id, fetchProduct, {immediate: true} );
 
 async function fetchProduct(id) { 
-    try { 
-        var service = new ProductAPIService(); 
-        model.value = await service.getProductById(id); 
-    } catch (err) { 
-        console.log('error while fetching.', err)
-    }
+    // try { 
+    //     var service = new ProductAPIService(); 
+    //     model.value = await service.getProductById(id); 
+    // } catch (err) { 
+    //     console.log('error while fetching.', err)
+    // }
+    model.value = store.getProductById(id)
 }
 
 
